@@ -192,7 +192,7 @@ public class AppTest {
     }
   }
 
-  /**
+  /**19
    * testEmiteResultadoReprovado
    */
   @Test

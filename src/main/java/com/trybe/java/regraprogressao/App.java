@@ -29,7 +29,24 @@ public class App {
       String nota = scanner.next();
 
       atividades.add(new Atividade(atividade, peso, nota));
+    }
 
+    Double notas = 0.0;
+    Double pesos = 0.0;
+    for (Atividade atividade : atividades) {
+      notas += Double.parseDouble(atividade.getPeso()) * Double.parseDouble(atividade.getNota());
+      pesos += Double.parseDouble(atividade.getPeso());
+    }
+
+    Double resultado = notas / pesos;
+
+    if (resultado >= 85.0) {
+      System.out.println("Parabéns! Você alcançou " +  resultado + "%! E temos o prazer de"
+          + " informar que você obteve aprovação!");
+    } else {
+      System.out.println("Lamentamos informar que, com base na sua pontuação alcançada neste"
+          + " período, " +  resultado + "%, você não atingiu a pontuação mínima necessária"
+          + " para sua aprovação.");
     }
   }
 }
